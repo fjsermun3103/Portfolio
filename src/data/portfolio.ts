@@ -2,11 +2,11 @@
 
 export const links = {
   // TODO: sustituye por tus URLs reales
-  github: "https://github.com/",
-  linkedin: "https://www.linkedin.com/",
-  blendus: "https://github.com/",
-  mernFrontend: "https://github.com/",
-  mernBackend: "https://github.com/",
+  github: "https://github.com/fjsermun3103",
+  linkedin: "https://www.linkedin.com/in/fsermun3103/",
+  blendus: "https://github.com/fjsermun3103/BlendUs",
+  mernFrontend: "https://github.com/fjsermun3103/MERN-calendar",
+  mernBackend: "https://github.com/fjsermun3103/calendar-backend",
   email: "fsermun3103@gmail.com",
 };
 
@@ -14,6 +14,7 @@ export const marqueeItems = [
   "React",
   "TypeScript",
   "Next.js",
+  "PHP",
   "Node.js",
   "Express",
   "Laravel",
@@ -22,13 +23,6 @@ export const marqueeItems = [
   "Stripe",
   "MongoDB",
   "PostgreSQL",
-];
-
-export const stats = [
-  { value: "3", label: "agentes de IA con Ollama" },
-  { value: "2", label: "proyectos full-stack" },
-  { value: "5", label: "meses de prácticas en e-learning" },
-  { value: "3", label: "idiomas: ES, EN y FR" },
 ];
 
 export type Feature = { before?: string; strong: string; rest: string };
@@ -90,6 +84,51 @@ export const stackGroups: { title: string; color: ChipColor; items: string[] }[]
   { title: "DevOps y herramientas", color: "pink", items: ["Docker", "Git", "GitHub", "AWS"] },
   { title: "Integraciones e IA", color: "lime", items: ["Ollama", "Stripe", "Webhooks"] },
   { title: "Testing", color: "lavender", items: ["Playwright", "Jest", "Vitest"] },
+];
+
+export type Stat = {
+  /** Número (se anima contando) o texto fijo como "B2". */
+  value: number | string;
+  suffix?: string;
+  kicker: string;
+  label: string;
+  detail: string;
+  color: ChipColor;
+};
+
+// Se calcula a partir del stack para que nunca se desincronice.
+const techCount = stackGroups.reduce((n, g) => n + g.items.length, 0);
+
+export const stats: Stat[] = [
+  {
+    value: 3,
+    kicker: "IA",
+    label: "agentes de IA integrados",
+    detail: "LLMs locales con Ollama en BlendUs",
+    color: "lime",
+  },
+  {
+    value: techCount,
+    suffix: "+",
+    kicker: "Stack",
+    label: "tecnologías en mi stack",
+    detail: "Front, back, bases de datos, DevOps y testing",
+    color: "lavender",
+  },
+  {
+    value: 5,
+    kicker: "Empresa",
+    label: "meses de experiencia real",
+    detail: "Prácticas en Conecta13 (e-learning)",
+    color: "pink",
+  },
+  {
+    value: "B2",
+    kicker: "Idiomas",
+    label: "de inglés",
+    detail: "Listo para equipos en España y Europa",
+    color: "white",
+  },
 ];
 
 export const about = [

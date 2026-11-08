@@ -1,74 +1,29 @@
-import Image from "next/image";
 import Window from "@/components/Window";
-import { CheckIcon, GitHubIcon, LinkedInIcon, MailIcon, Sparkle, StarLogo } from "@/components/Icons";
+import { CheckIcon, GitHubIcon, LinkedInIcon, MailIcon, Sparkle } from "@/components/Icons";
 import {
   about,
-  blendus,
   courses,
   internship,
   languages,
   links,
-  marqueeItems,
   mernCalendar,
   stackGroups,
-  stats,
   studies,
   type Feature,
 } from "@/data/portfolio";
+import { NavBar } from "@/components/NavBar";
+import { Bienvenido } from "@/windows/Bienvenido";
+import { Burst } from "@/components/Burst";
+import { Foto } from "@/windows/Foto";
+import { Marquee } from "@/components/Marquee";
+import { Stats } from "@/components/Stats";
+import { Destacado } from '../windows/Destacado';
 
-function FeatureList({ features }: { features: Feature[] }) {
-  return (
-    <ul className="features">
-      {features.map((f) => (
-        <li key={f.strong}>
-          <span className="features__check">
-            <CheckIcon />
-          </span>
-          <span>
-            {f.before}
-            <strong>{f.strong}</strong>
-            {f.rest}
-          </span>
-        </li>
-      ))}
-    </ul>
-  );
-}
 
-function Tags({ items }: { items: string[] }) {
-  return (
-    <ul className="tags">
-      {items.map((t) => (
-        <li key={t}>{t}</li>
-      ))}
-    </ul>
-  );
-}
 
-function ChatIllustration() {
-  return (
-    <div className="illo illo--chat" aria-hidden="true">
-      <div className="illo__card">
-        <div className="chat__head">
-          <span className="chat__avatar" />
-          <span className="chat__line chat__line--short" />
-        </div>
-        <div className="chat__bubble chat__bubble--in">
-          <span className="chat__line" />
-          <span className="chat__line chat__line--mid" />
-        </div>
-        <div className="chat__bubble chat__bubble--out">
-          <span className="chat__line chat__line--dark" />
-        </div>
-        <div className="chat__bubble chat__bubble--ai">
-          <span className="chat__ai-tag">IA</span>
-          <span className="chat__line chat__line--dark" />
-          <span className="chat__line chat__line--dark chat__line--mid" />
-        </div>
-      </div>
-    </div>
-  );
-}
+
+
+
 
 function CalendarIllustration() {
   const highlights: Record<number, string> = { 2: "lime", 10: "lavender", 14: "lime", 22: "pink" };
@@ -93,89 +48,31 @@ function CalendarIllustration() {
 }
 
 export default function Home() {
-  const marquee = [...marqueeItems, ...marqueeItems];
 
   return (
     <>
-      <nav className="nav">
-        <a href="#inicio" className="nav__brand">
-          <StarLogo />
-          <span>Portfolio.exe</span>
-        </a>
-        <ul className="nav__links">
-          <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#stack">Stack</a></li>
-          <li><a href="#sobre-mi">Sobre mí</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-        <a href="#contacto" className="btn btn--pink btn--sm">Hablemos</a>
-      </nav>
+      <NavBar />
 
       <main className="page" id="inicio">
         {/* HERO */}
         <div className="hero">
-          <Window title="bienvenido.exe" className="hero__main" bodyClassName="hero__body">
-            <p className="pill-label">Junior Full-Stack Developer / Granada</p>
-            <h1 className="hero__title">Hola, soy Paco.</h1>
-            <p className="hero__subtitle">
-              Desarrollador <mark>full-stack</mark>.
-            </p>
-            <p className="hero__text">
-              Especializado en React, TypeScript y Node.js. Construyo aplicaciones web completas y APIs
-              REST, con pagos, bases de datos, Docker e IA integrada.
-            </p>
-            <div className="btn-row">
-              <a href="#proyectos" className="btn btn--pink">Ver proyectos</a>
-              <a href={links.github} target="_blank" rel="noopener noreferrer" className="btn btn--white">
-                <GitHubIcon /> GitHub
-              </a>
-            </div>
-          </Window>
+          <Bienvenido />
 
-          <div className="burst" aria-label="Abierto a ofertas">
-            <span>Abierto<br />a ofertas</span>
-          </div>
+          <Burst />
 
-          <Window title="foto.jpg" className="hero__photo" bodyClassName="photo__body">
-            <div className="photo__frame">
-              <Image
-                src="/foto.jpg"
-                alt="Foto de Paco Serrano"
-                fill
-                priority
-                sizes="(max-width: 860px) 90vw, 300px"
-                className="photo__img"
-              />
-            </div>
-            <Sparkle size={30} className="sparkle sparkle--tr" />
-            <Sparkle size={20} className="sparkle sparkle--bl" />
-          </Window>
+          <Foto />
         </div>
 
         {/* MARQUEE */}
-        <div className="marquee" aria-label={marqueeItems.join(", ")}>
-          <div className="marquee__track" aria-hidden="true">
-            {marquee.map((item, i) => (
-              <span key={i}>
-                {item} <b>+</b>
-              </span>
-            ))}
-          </div>
-        </div>
-
+        <Marquee />
+   
         {/* STATS */}
-        <ul className="stats">
-          {stats.map((s) => (
-            <li key={s.label} className="stat">
-              <span className="stat__value">{s.value}</span>
-              <span className="stat__label">{s.label}</span>
-            </li>
-          ))}
-        </ul>
+        <Stats />
 
-        {/* PROYECTOS */}
         <div id="proyectos" className="projects">
-          <Window title={blendus.path} bodyClassName="project">
+          {/* DESTACADO */}
+          <Destacado/>
+          {/* <Window title={blendus.path} bodyClassName="project">
             <div className="project__visual project__visual--lavender">
               <Sparkle size={30} className="sparkle sparkle--tr" />
               <ChatIllustration />
@@ -192,9 +89,11 @@ export default function Home() {
                 </a>
               </div>
             </div>
-          </Window>
+          </Window> */}
+          
+          {/* PROYECTOS */}
 
-          <Window title={mernCalendar.path} bodyClassName="project project--reverse">
+          {/* <Window title={mernCalendar.path} bodyClassName="project project--reverse">
             <div className="project__info">
               <span className="badge badge--lavender">{mernCalendar.badge}</span>
               <h2 className="project__title">{mernCalendar.title}</h2>
@@ -214,7 +113,8 @@ export default function Home() {
               <Sparkle size={30} className="sparkle sparkle--tl" />
               <CalendarIllustration />
             </div>
-          </Window>
+          </Window> */}
+          
         </div>
 
         {/* STACK */}
@@ -238,12 +138,12 @@ export default function Home() {
               <p key={p.slice(0, 20)}>{p}</p>
             ))}
           </Window>
-          <Window title="practicas.log">
+          {/* <Window title="practicas.log">
             <span className="badge badge--lime">{internship.badge}</span>
             <h2 className="card-title">{internship.company}</h2>
             <p className="muted">{internship.description}</p>
             <Tags items={internship.tags} />
-          </Window>
+          </Window> */}
         </div>
 
         {/* ESTUDIOS + CURSOS + IDIOMAS */}
