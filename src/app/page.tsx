@@ -1,11 +1,3 @@
-import Window from "@/components/Window";
-import { GitHubIcon, LinkedInIcon, MailIcon } from "@/components/Icons";
-import {
-  courses,
-  languages,
-  links,
-  studies,
-} from "@/data/portfolio";
 import { NavBar } from "@/components/NavBar";
 import { Bienvenido } from "@/windows/Bienvenido";
 import { Burst } from "@/components/Burst";
