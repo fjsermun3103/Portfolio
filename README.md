@@ -6,9 +6,8 @@
 
 Una web de una sola página con estética Y2K / escritorio retro, construida con Next.js, React y TypeScript.
 
-<!-- TODO: cuando esté desplegado, descomenta y pon la URL real
-**[Ver en vivo →](https://tu-dominio.com)**
--->
+**[Ver en vivo →](https://portfolio-fsermun3103.vercel.app/)**
+
 
 ![Next.js](https://img.shields.io/badge/Next.js-16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)
