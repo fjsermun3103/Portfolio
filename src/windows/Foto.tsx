@@ -13,6 +13,7 @@ export const Foto = () => {
                     priority
                     sizes="(max-width: 860px) 90vw, 300px"
                     className="photo__img"
+                    loading="eager"
                 />
             </div>
             <Sparkle size={30} className="sparkle sparkle--tr" />

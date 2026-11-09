@@ -621,6 +621,73 @@ ul {
   font-size: 12.5px;
 }
 
+.shot {
+  width: 100%;
+  max-width: 440px;
+  margin: 0;
+  border: 2px solid var(--navy);
+  border-radius: 14px;
+  box-shadow: 8px 8px 0 var(--navy);
+  overflow: hidden;
+  background-color: var(--navy);
+  transform: rotate(-1.5deg);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.shot:hover {
+  transform: rotate(0deg) translate(-3px, -3px);
+  box-shadow: 11px 11px 0 var(--navy);
+}
+
+.shot__bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: var(--navy);
+}
+
+.shot__bar i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--pink);
+}
+.shot__bar i:nth-child(2) {
+  background: var(--lime);
+}
+.shot__bar i:nth-child(3) {
+  background: var(--lavender);
+}
+
+.shot__url {
+  flex: 1;
+  margin-left: 8px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  font-family: var(--font-pixel), monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.shot__screen {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-top: 2px solid var(--navy);
+}
+
+.shot__img {
+  object-fit: cover;
+  object-position: top;
+  transition: object-position 4s ease-in-out;
+}
+
+.shot:hover .shot__img {
+  object-position: bottom;
+}
+
 /* Illustrations */
 .illo {
   width: 100%;
@@ -918,6 +985,7 @@ ul {
   text-underline-offset: 4px;
 }
 
+
 /* ---------- FOOTER ---------- */
 .footer {
   max-width: 1120px;
@@ -1030,9 +1098,14 @@ ul {
     animation: none;
   }
   .stat,
-  .stat:hover {
+  .stat:hover,
+  .shot,
+  .shot:hover {
     transition: none;
     transform: none;
+  }
+  .shot__img {
+    transition: none;
   }
   html {
     scroll-behavior: auto;
