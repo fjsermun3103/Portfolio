@@ -8,10 +8,12 @@ export const Contacto = () => {
             <div>
                 <h2 className="contact__title">¿Hablamos?</h2>
                 <p className="muted">Disponible en remoto, híbrido o con reubicación.</p>
-                <a className="contact__email" href={`mailto:${links.email}`}>{links.email}</a>
+                <a className="contact__email" href={links.emailCompose} target="_blank" rel="noopener noreferrer">
+                    {links.email}
+                </a>
             </div>
             <div className="btn-row">
-                <a href={`mailto:${links.email}`} className="btn btn--pink">
+                <a href={links.emailCompose} target="_blank" rel="noopener noreferrer" className="btn btn--pink">
                     <MailIcon /> Escríbeme
                 </a>
                 <a href={links.github} target="_blank" rel="noopener noreferrer" className="btn btn--white">

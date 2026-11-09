@@ -1,13 +1,16 @@
 // Contenido del portfolio. Edita aquí textos y enlaces sin tocar los componentes.
 
+const email = "fsermun3103@gmail.com";
+
 export const links = {
-  // TODO: sustituye por tus URLs reales
   github: "https://github.com/fjsermun3103",
   linkedin: "https://www.linkedin.com/in/fsermun3103/",
   blendus: "https://github.com/fjsermun3103/BlendUs",
   mernFrontend: "https://github.com/fjsermun3103/MERN-calendar",
   mernBackend: "https://github.com/fjsermun3103/calendar-backend",
-  email: "fsermun3103@gmail.com",
+  email,
+  // Abre la ventana de redactar de Gmail con el destinatario ya puesto.
+  emailCompose: `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`,
 };
 
 export const marqueeItems = [

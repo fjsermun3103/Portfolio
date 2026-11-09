@@ -114,7 +114,7 @@ Los colores del diseño se definen como variables en `:root` al principio de [`s
 
 ¿Buscas un desarrollador junior full-stack? Estoy disponible en remoto, en híbrido o con reubicación.
 
-- **Email:** [fsermun3103@gmail.com](mailto:fsermun3103@gmail.com)
+- **Email:** [fsermun3103@gmail.com](https://mail.google.com/mail/?view=cm&fs=1&to=fsermun3103@gmail.com)
 - **LinkedIn:** [linkedin.com/in/fsermun3103](https://www.linkedin.com/in/fsermun3103/)
 - **GitHub:** [@fjsermun3103](https://github.com/fjsermun3103)
 
